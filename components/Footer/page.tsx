@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-
 const navigation = {
   general: [
     { name: 'Home', href: '/' },

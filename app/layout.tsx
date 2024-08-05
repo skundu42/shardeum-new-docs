@@ -1,5 +1,5 @@
 "use client";import './global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
+import { Provider } from './provider';
 import { Inter } from 'next/font/google';
 import { useState, useEffect, ReactNode } from 'react';
 
@@ -52,15 +52,12 @@ export default function Layout({ children }: { children: ReactNode }) {
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        <RootProvider
-          theme={{
-            enabled: true,
-          }}
+        <Provider
         >
           <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           <main>{children}</main>
           <Footer isDarkMode={isDarkMode} />
-        </RootProvider>
+        </Provider>
       </body>
     </html>
   );
